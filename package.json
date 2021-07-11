@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/zzangu0215/Team-Profile-Generator#readme",
   "dependencies": {
-    "inquirer": "^8.1.1"
+    "inquirer": "^8.1.1",
+    "jest": "^27.0.6"
   }
 }
