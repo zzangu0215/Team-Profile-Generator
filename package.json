@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/zzangu0215/Team-Profile-Generator/issues"
   },
-  "homepage": "https://github.com/zzangu0215/Team-Profile-Generator#readme"
+  "homepage": "https://github.com/zzangu0215/Team-Profile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.1"
+  }
 }
