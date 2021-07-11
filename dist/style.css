@@ -1,0 +1,30 @@
+.jumbotron {
+  background-color:cadetblue;
+  font-family: 'Otomanopee One', sans-serif;
+  color: rgb(231, 221, 221);
+}
+
+.card-body {
+  font-family: 'Merienda', cursive;
+}
+
+h3 {
+  font-size: 2rem;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+h4 {
+  font-family: 'Indie Flower', cursive;
+}
+
+#manager {
+  background-color:rgb(218, 131, 32);
+}
+
+#engineer {
+  background-color: deepskyblue;
+}
+
+#intern {
+  background-color: darkseagreen;
+}
