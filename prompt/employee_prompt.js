@@ -3,7 +3,7 @@ function employeeInput() {
   const askForEmployee = [
     {
       type: 'list',
-      message: "\nManager Added ✔. Time to add your employees\nPlease choose your employee's role.",
+      message: "Please choose your employee's role.",
       name: 'employee_role',
       choices: ['Engineer', 'Intern'],
     },
@@ -74,6 +74,12 @@ function employeeInput() {
       type: 'input',
       message: 'Would you like to add more employee? (Type "yes" or "no")',
       name: 'add_more_employee',
+      validate: answer => {
+        if (answer === 'yes' && answer === 'no') {
+          console.log('\nPlease type "yes" or "no"!!');
+          return false;
+        }
+      }
     }
   ]
 

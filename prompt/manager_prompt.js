@@ -3,7 +3,7 @@ function managerInput() {
   const askForManager = [
     {
       type: 'input',
-      message: 'TEAM PROFILE GENERATOR! Press [ENTER] to get started! (type "exit" to return to main menu)',
+      message: 'Press [ENTER] to get started! (type "exit" to return to main menu)',
       name: 'program_start',
       validate: answer => {
         const ans = answer.toLowerCase();
@@ -17,9 +17,13 @@ function managerInput() {
       name: 'ask_manager',
       validate: answer => {
         if (answer === 'yes') return true;
-        else {
+        else if (answer === 'no') {
           console.log("\nONLY manager can access to this program! Good Bye!");
           return process.exit();
+        }
+        else {
+          console.log('\nPlease type "yes" or "no"!!');
+          return false;
         }
       }
     },

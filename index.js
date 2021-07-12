@@ -25,11 +25,33 @@ function addManager() {
 }
 
 function addEmployee() {
-  return inquirer.prompt(employeeInputArray);
+  console.log('\nManager Added ✔\nTime to add your employees\n');
+  return inquirer
+    .prompt(employeeInputArray)
+    .then(userInput => {
+      let { employee_role, employee_name, employee_id, employee_email, employee_github, employee_school, add_more } = userInput;
+      let employee;
+
+      if (employee_role === "Engineer")
+        employee = new Engineer (employee_name, employee_id, employee_email, employee_github);
+      else if (employee_role === "Intern")
+        employee = new Intern (employee_name, employee_id, employee_email, employee_school);
+
+      teamMemberArray.push(employee);
+
+      if (add_more === 'yes') return addEmployee();
+      else if (add_more === 'no') return teamMemberArray;
+      console.log(teamMemberArray);
+    });
 }
 
 function addTeamMembers() {
 
+  console.log(`
+  =====================================
+    WELCOME TO TEAM PROFILE GENERATOR
+  =====================================
+  `)
   addManager()
     .then(addEmployee);
 
