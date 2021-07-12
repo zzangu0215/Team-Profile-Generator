@@ -9,7 +9,7 @@ function employeeInput() {
     },
     {
       type: 'input',
-      message: "What's the name of the employee?",
+      message: "\nWhat's the name of the employee?",
       name: 'employee_name',
       validate: answer => {
         if (answer) return true;
@@ -75,10 +75,11 @@ function employeeInput() {
       message: 'Would you like to add more employee? (Type "yes" or "no")',
       name: 'add_more_employee',
       validate: answer => {
-        if (answer === 'yes' && answer === 'no') {
+        if (answer !== 'yes' && answer !== 'no') {
           console.log('\nPlease type "yes" or "no"!!');
           return false;
         }
+        else return true;
       }
     }
   ]
