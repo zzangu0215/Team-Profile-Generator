@@ -33,13 +33,13 @@ function employeeInput() {
     },
     {
       type: 'input',
-      message: "What's the employee's email?",
+      message: "What's the employee's email? (e.g. person@email.com)",
       name: 'employee_email',
       validate: answer => {
         const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answer);
         if (validEmail) return true;
         else {
-          console.log("\nPlease Enter the valid email!");
+          console.log("\nPlease Enter the valid email! Valid format is (e.g. person@email.com)");
           return false;
         }
       }

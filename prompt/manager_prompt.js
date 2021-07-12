@@ -27,13 +27,13 @@ function managerInput() {
     },
     {
       type: 'input',
-      message: 'What is your email?',
+      message: 'What is your email? (e.g. person@email.com)',
       name: 'manager_email',
       validate: answer => {
         const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answer);
         if (validEmail) return true;
         else {
-          console.log("\nPlease Enter the valid email!");
+          console.log("\nPlease Enter the valid email! Valid format is (e.g. person@email.com)");
           return false;
         }
       }
