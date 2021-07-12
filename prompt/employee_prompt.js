@@ -3,7 +3,7 @@ function employeeInput() {
   const askForEmployee = [
     {
       type: 'list',
-      message: "Please choose your employee's role.",
+      message: "\nManager Added ✔. Time to add your employees\nPlease choose your employee's role.",
       name: 'employee_role',
       choices: ['Engineer', 'Intern'],
     },
