@@ -15,17 +15,66 @@ const askForManager = [
   },
   {
     type: 'input',
-    message: 'Are you a manager of your team? (Type "Yes" or "No")',
+    message: 'Are you a manager of your team? (Type "yes" or "no")',
     name: 'ask_manager',
     validate: answer => {
-      if (answer === 'Yes') return true;
+      if (answer === 'yes') return true;
       else {
         console.log("\nONLY manager can access to this program! Good Bye!");
         return process.exit();
       }
     }
+  },
+  {
+    type: 'input',
+    message: "WELCOME Manager! What's your name?",
+    name: 'manager_name',
+    validate: answer => {
+      if (answer) return true;
+      else {
+        console.log("Please Enter your name!");
+        return false;
+      }
+    }
+  },
+  {
+    type: 'input',
+    message: 'What is your ID?',
+    name: 'manager_id',
+    validate: answer => {
+      if (answer) return true;
+      else {
+        console.log("Please Enter your ID!");
+        return false;
+      }
+    }
+  },
+  {
+    type: 'input',
+    message: 'What is your email?',
+    name: 'manager_email',
+    validate: answer => {
+      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answer);
+      if (validEmail) return true;
+      else {
+        console.log("Please Enter the valid email!");
+        return false;
+      }
+    }
+  },
+  {
+    type: 'input', 
+    message: 'What is your office number?',
+    name: 'manager_office',
+    validate: answer => {
+      if (answer) return true;
+      else {
+        console.log("Please Enter your Office Number!");
+        return false;
+      }
+    }
   }
-]
+];
 
 inquirer
   .prompt(askForManager);
