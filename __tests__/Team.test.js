@@ -71,7 +71,7 @@ describe('Manager', () => {
 
 describe('Engineer', () => {
   describe('constructor', () => {
-    it('should create an Manager object', () => {
+    it('should create an Engineer object', () => {
       expect(engineer.name).toEqual('Jun');
       expect(engineer.id).toEqual('tajo0215');
       expect(engineer.email).toEqual('tajo0215@gmail.com');
@@ -94,7 +94,7 @@ describe('Engineer', () => {
 
 describe('Intern', () => {
   describe('constructor', () => {
-    it('should create an Manager object', () => {
+    it('should create an Intern object', () => {
       expect(intern.name).toEqual('Jun');
       expect(intern.id).toEqual('tajo0215');
       expect(intern.email).toEqual('tajo0215@gmail.com');
