@@ -2,80 +2,20 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const { mainModule } = require('process');
 
-const askForManager = [
-  {
-    type: 'input',
-    message: 'TEAM PROFILE GENERATOR! Press [ENTER] to get started! (type "exit" to return to main menu)',
-    name: 'program_start',
-    validate: answer => {
-      const ans = answer.toLowerCase();
-      if (ans === "exit") return process.exit();
-      else return true;
-    }
-  },
-  {
-    type: 'input',
-    message: 'Are you a manager of your team? (Type "yes" or "no")',
-    name: 'ask_manager',
-    validate: answer => {
-      if (answer === 'yes') return true;
-      else {
-        console.log("\nONLY manager can access to this program! Good Bye!");
-        return process.exit();
-      }
-    }
-  },
-  {
-    type: 'input',
-    message: "WELCOME Manager! What's your name?",
-    name: 'manager_name',
-    validate: answer => {
-      if (answer) return true;
-      else {
-        console.log("Please Enter your name!");
-        return false;
-      }
-    }
-  },
-  {
-    type: 'input',
-    message: 'What is your ID?',
-    name: 'manager_id',
-    validate: answer => {
-      if (answer) return true;
-      else {
-        console.log("Please Enter your ID!");
-        return false;
-      }
-    }
-  },
-  {
-    type: 'input',
-    message: 'What is your email?',
-    name: 'manager_email',
-    validate: answer => {
-      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answer);
-      if (validEmail) return true;
-      else {
-        console.log("Please Enter the valid email!");
-        return false;
-      }
-    }
-  },
-  {
-    type: 'input', 
-    message: 'What is your office number?',
-    name: 'manager_office',
-    validate: answer => {
-      if (answer) return true;
-      else {
-        console.log("Please Enter your Office Number!");
-        return false;
-      }
-    }
-  }
-];
+const managerInput = require('./prompt/manager_prompt.js');
+const employeeInput = require('./prompt/employee_prompt.js');
 
-inquirer
-  .prompt(askForManager);
+const managerInputArray = managerInput();
+const employeeInputArray = employeeInput();
+
+
+function addTeamMembers() {
+
+  inquirer
+  .prompt(managerInputArray);
+
+}
+
+addTeamMembers();
+
 
