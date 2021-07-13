@@ -88,7 +88,7 @@ function appendIntern(intern) {
       <ul class="list-group list-group-flush">
         <li class="list-group-item" id="id"><strong>ID: </strong>${intern.id}</li>
         <li class="list-group-item" id="email"><strong>Email: </strong><a href="mailto:${intern.email}">${intern.email}</a></li>
-        <li class="list-group-item" id="github"><strong>School: </strong>${intern.school}</li>
+        <li class="list-group-item" id="school"><strong>School: </strong>${intern.school}</li>
       </ul>
     </div>
    </div>
