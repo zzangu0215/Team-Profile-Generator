@@ -2,7 +2,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const { mainModule } = require('process');
 
-const generateHTML = require('./src/generateHTML.js');
+const generateTeamPage = require('./src/generateHTML.js');
 
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
@@ -77,7 +77,7 @@ function addTeamMembers() {
   initialPrompt()
     .then(addManager)
     .then(addEmployee)
-    .then(teamMemberArray => generateHTML(teamMemberArray))
+    .then(teamMemberArray => generateTeamPage(teamMemberArray))
     .then(htmlBlocks => writeToFile(htmlBlocks))
 
 }
