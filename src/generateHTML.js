@@ -1,4 +1,4 @@
-const basicBlock = function () {
+const htmlBlock = function (teamMembers) {
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -25,6 +25,7 @@ const basicBlock = function () {
       <main>
         <div class="container">
           <div class="row justify-content-center" id="entire-team">
+            ${teamMembers}
           </div>
         </div>
       </main>
@@ -40,58 +41,76 @@ function appendManager(manager) {
   const managerBlock = `
   <div class="card border-secondary mb-3 mt-4">
     <div class="card-header" id="manager">
-      <h3>${manager.manager_name}</h3>
+      <h3>${manager.name}</h3>
       <h4><i class="bi bi-person-badge-fill"></i><strong> Manager</strong></h4>
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item" id="id"><strong>ID: </strong>${manager.manager_id}</li>
-        <li class="list-group-item" id="email"><strong>Email: </strong><a href="mailto:${manager.manager_email}">${manager.manager_email}</a></li>
-        <li class="list-group-item" id="office-number"><strong>Office Number: </strong>${manager.manager_office}</li>
+        <li class="list-group-item" id="id"><strong>ID: </strong>${manager.id}</li>
+        <li class="list-group-item" id="email"><strong>Email: </strong><a href="mailto:${manager.email}">${manager.email}</a></li>
+        <li class="list-group-item" id="office-number"><strong>Office Number: </strong>${manager.officeNumber}</li>
       </ul>
     </div>
    </div>
   `;
 
-  $('#entire-team').append(managerBlock);
+  return managerBlock;
 }
 
 function appendEngineer(engineer) {
   const engineerBlock = `
   <div class="card border-secondary mb-3 mt-4">
     <div class="card-header" id="engineer">
-      <h3>${engineer.employee_name}</h3>
+      <h3>${engineer.name}</h3>
       <h4><i class="bi bi-laptop"></i><strong> Engineer</strong></h4>
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item" id="id"><strong>ID: </strong>${engineer.employee_id}</li>
-        <li class="list-group-item" id="email"><strong>Email: </strong><a href="mailto:${engineer.employee_email}">${engineer.employee_email}</a></li>
-        <li class="list-group-item" id="github"><strong>Github: </strong><a href="https://github.com/${engineer.employee_github}/">${engineer.employee_github}</a></li>
+        <li class="list-group-item" id="id"><strong>ID: </strong>${engineer.id}</li>
+        <li class="list-group-item" id="email"><strong>Email: </strong><a href="mailto:${engineer.email}">${engineer.email}</a></li>
+        <li class="list-group-item" id="github"><strong>Github: </strong><a href="https://github.com/${engineer.github}/">${engineer.github}</a></li>
       </ul>
     </div>
    </div>
   `;
 
-  $('#entire-team').append(engineerBlock);
+  return engineerBlock;
 }
 
 function appendIntern(intern) {
   const internBlock = `
   <div class="card border-secondary mb-3 mt-4">
     <div class="card-header" id="intern">
-      <h3>${intern.employee_name}</h3>
+      <h3>${intern.name}</h3>
       <h4><i class="bi bi-laptop"></i><strong> Intern</strong></h4>
     </div>
     <div class="card-body">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item" id="id"><strong>ID: </strong>${intern.employee_id}</li>
-        <li class="list-group-item" id="email"><strong>Email: </strong><a href="mailto:${intern.employee_email}">${intern.employee_email}</a></li>
-        <li class="list-group-item" id="github"><strong>School: </strong>${intern.employee_school}</li>
+        <li class="list-group-item" id="id"><strong>ID: </strong>${intern.id}</li>
+        <li class="list-group-item" id="email"><strong>Email: </strong><a href="mailto:${intern.email}">${intern.email}</a></li>
+        <li class="list-group-item" id="github"><strong>School: </strong>${intern.school}</li>
       </ul>
     </div>
    </div>
   `;
 
-  $('#entire-team').append(internBlock);
+  return internBlock;
 }
+
+function generateTeamPage(teamMemberArray) {
+
+  const teamMemberCards = [];
+
+  for (let i=0; i<teamMemberArray.length; i++) {
+    const teamMember = teamMemberArray[i].getRole();
+    const role = teamMemberArray[i];
+
+    if (teamMember === "Manager") teamMemberCards.push(appendManager(role));
+    else if (teamMember === "Engineer") teamMemberCards.push(appendEngineer(role));
+    else if (teamMember === "Intern") teamMemberCards.push(appendIntern(role));
+  }
+  
+  return htmlBlock(teamMemberCards.join(''));
+}
+
+module.exports = generateTeamPage;

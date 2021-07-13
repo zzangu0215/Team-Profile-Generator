@@ -2,6 +2,8 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const { mainModule } = require('process');
 
+const generateHTML = require('./src/generateHTML.js');
+
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
@@ -28,7 +30,7 @@ function addManager() {
       const manager = new Manager (manager_name, manager_id, manager_email, manager_office);
 
       teamMemberArray.push(manager);
-      console.log('\nManager Added ✔')
+      console.log('\nManager Added ✔');
     });
 }
 
@@ -50,14 +52,19 @@ function addEmployee() {
         employee = new Intern (employee_name, employee_id, employee_email, employee_school);
 
       teamMemberArray.push(employee);
+      console.log(`\n${employee_role} Added ✔`);
 
       if (add_more_employee === 'yes') return addEmployee(teamMemberArray);
-      else if (add_more_employee === 'no') {
-        console.log(teamMemberArray);
-        return teamMemberArray;
-      }
-      
+      else if (add_more_employee === 'no') return teamMemberArray;     
     });
+}
+
+function writeToFile(htmlBlocks) {
+  fs.writeFile('./dist/output/teampage.html', htmlBlocks, err => {
+    err ? 
+    console.log(err) : 
+    console.log('✅ Successfully Generated your Team Profile Page.\nGo open up "./dist/output/teampage.html" in your browser and see what we got for you!');
+  })
 }
 
 function addTeamMembers() {
@@ -69,7 +76,9 @@ function addTeamMembers() {
   `);
   initialPrompt()
     .then(addManager)
-    .then(addEmployee);
+    .then(addEmployee)
+    .then(teamMemberArray => generateHTML(teamMemberArray))
+    .then(htmlBlocks => writeToFile(htmlBlocks))
 
 }
 
