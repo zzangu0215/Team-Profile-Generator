@@ -8,6 +8,10 @@
   font-family: 'Merienda', cursive;
 }
 
+.card {
+  width: 22rem;
+}
+
 h3 {
   font-size: 2rem;
   font-family: 'Rajdhani', sans-serif;
