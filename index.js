@@ -66,7 +66,7 @@ function addTeamMembers() {
   =====================================
     WELCOME TO TEAM PROFILE GENERATOR
   =====================================
-  `)
+  `);
   initialPrompt()
     .then(addManager)
     .then(addEmployee);
