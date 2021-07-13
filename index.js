@@ -63,7 +63,7 @@ function writeToFile(htmlBlocks) {
   fs.writeFile('./dist/output/teampage.html', htmlBlocks, err => {
     err ? 
     console.log(err) : 
-    console.log('✅ Successfully Generated your Team Profile Page.\nGo open up "./dist/output/teampage.html" in your browser and see what we got for you!');
+    console.log('\n✅ Successfully Generated your Team Profile Page.\nGo open up "./dist/output/teampage.html" in your browser and see what we got for you!');
   })
 }
 
