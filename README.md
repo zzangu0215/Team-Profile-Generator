@@ -60,11 +60,13 @@ Type and run **`npm run test`** in your terminal, then it will test the followin
 
 ![Image Caption](images/tests.PNG)
 
-
 ## 🎬 Demo Video
 
 If you are unsure of what you need to do? Here is the link of the walkthrough video. Go check it out.  
-[**Demo Video Link**](https://youtu.be/CsBoPhA-1xM)
+
+**CLICK THE PLAY BUTTON**
+[![Image Caption](images/youtube-play-button.PNG)](https://youtu.be/CsBoPhA-1xM)
+
 
 ## ❔ Questions
 🖐 If you have any question about me or my project, feel free to contact me!  
