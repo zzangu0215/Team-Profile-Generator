@@ -22,7 +22,7 @@ Just run my app and type information of you and your team members!
 Look at the documentation carefully and grab a wonderful **Team Profile Page** for your team!
 
 The image below is an example of generated **Team Profile Page** based on my input.  
-Click the image below and see the **HTML** code of that page! 
+**CLICK** the image below and see the **HTML** code of that page! 
 
 [![Image Caption](images/outputHTML.PNG)](https://github.com/zzangu0215/Team-Profile-Generator/blob/main/dist/output/teampage.html)
 
