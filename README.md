@@ -64,7 +64,7 @@ Type and run **`npm run test`** in your terminal, then it will test the followin
 
 If you are unsure of what you need to do? Here is the link of the walkthrough video. Go check it out.  
 
-**CLICK THE PLAY BUTTON**
+**CLICK THE PLAY BUTTON**  
 [![Image Caption](images/youtube-play-button.PNG)](https://youtu.be/CsBoPhA-1xM)
 
 
