@@ -58,6 +58,9 @@ Type and run **`npm run test`** in your terminal, then it will test the followin
   - **`Intern.test.js`**
   - **`Manager.test.js`**
 
+![Image Caption](images/tests.PNG)
+
+
 ## 🎬 Demo Video
 
 If you are unsure of what you need to do? Here is the link of the walkthrough video. Go check it out.  
