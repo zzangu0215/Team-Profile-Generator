@@ -3,16 +3,16 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
-- [**Description**](#📑-description)
-- [**Features**](#❗-important-features)
-- [**Installation**](#💾-installation)
-- [**Usage**](#💻-usage)
-- [**License**](#🛠-license)
-- [**Tests**](#📌-tests)
-- [**Demo Video**](#🎬-demo-video)
-- [**Questions**](#❔-questions)
-- [**Contributing**](#🔥-contributing)
-- [**Author**](#😎-author)
+- [**Description**](#-description)
+- [**Features**](#-important-features)
+- [**Installation**](#-installation)
+- [**Usage**](#-usage)
+- [**License**](#-license)
+- [**Tests**](#-tests)
+- [**Demo Video**](#-demo-video)
+- [**Questions**](#-questions)
+- [**Contributing**](#-contributing)
+- [**Author**](#-author)
 
 ## 📑 Description
 As a project manager, don't you want to have a nice team profile page?  
